@@ -1,21 +1,33 @@
+let humanChoice;
+let computerChoice;
+let humanScore = 0;
+let computerScore = 0;
+let gameInProgress = false;
+const paraPlayerScore = document.querySelector('#paraPlayerScore');
+paraPlayerScore.textContent = humanScore;
+
+const buttons = document.querySelectorAll('button');
+buttons.forEach((button)=>{
+    button.addEventListener('click' , getHumanChoice);
+});
+
+
+function getComputerChoice() {
+    let odds = Math.random();
+    return odds < 0.33 ?
+    'ROCK' : odds < 0.66 ? 'PAPPER'
+    : 'SCISSORS';
+}
+
+function getHumanChoice(e) {
+    if (!gameInProgress){
+        gameInProgress = !gameInProgress;
+        humanScore = 0;
+        computerScore = 0;
+    }
+    humanChoice = e.target.id.toUpperCase();
+}
 function play(){
-
-    let humanChoice;
-    let computerChoice;
-    let humanScore = 0;
-    let computerScore = 0;
-
-    function getComputerChoice() {
-        let odds = Math.random();
-        return odds < 0.33 ?
-        'ROCK' : odds < 0.66 ? 'PAPPER'
-        : 'SCISSORS';
-    }
-
-    function getHumanChoice() {
-        return prompt('Rock, papper, scissors?','');
-    }
-
     function playRound(getComputerChoice, getHumanChoice){
         humanChoice = getHumanChoice().toUpperCase();
         computerChoice = getComputerChoice();
