@@ -4,33 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <div>
+    <video autoplay muted loop id = 'video'>
+        <source src = './resources/robots.mp4' type = 'video/mp4'>
+    </video>
+    <div class = 'content'>
+    <div class = 'headingDiv'>
         <h1>Rock Paper Scissors</h1>
         <p>Do you have what it takes to defeat the evil AI?</p>
+        <p id = 'gameComment'></p>
     </div>
     <div class = 'images'>
         <div id = 'rockDiv'>
-            <img src = '' alt = 'rock'>
-        </div>
-        <div id = 'paperDiv'></div>
-            <img src = '' alt = 'paper'>
-        <div id = 'scissorsDiv'></div>
-            <img src = '' alt = 'scissors'>
+            <img src = './resources/rockImage.jpeg' alt = 'rock'></div>
+    
+        <div id = 'paperDiv'>
+            <img src = './resources/papperImage.jpg' alt = 'paper'></div>
+        <div id = 'scissorsDiv'>
+            <img src = './resources/scissorsImage.jpg' alt = 'scissors'></div>
     </div>
+    <div class = 'divButtons'>
+        <div><button class = 'rps' id = 'rock'>Rock</button></div>
+        <div><button class = 'rps' id = 'paper'>Paper</button></div>
+        <div><button class = 'rps' id = 'scissors'>Scissors</button></div>
+    </div>
+    <div class = 'rounds'>
+        <h2 id = 'roundCounter'>Rounds: 0/5</h2>
+    </div>
+
     <div class = 'ui'>
-        <span id = 'playerUI'>
+        <div id = 'playerUI'>
             <h2>Player Score</h2>
             <p id = 'paraPlayerScore'></p>
-            <button id = 'rock'>Rock</button>
-            <button id = 'paper'>Paper</button>
-            <button id = 'scissors'>Scissors</button>
-        </span>
-        <span id = 'aiUI'>
+        </div>
+        <div id = 'aiUI'>
             <h2>AI Score</h2>
             <p id = 'paraAiScore'></p>
-        </span>
+        </div>
+    </div>
     </div>
     <script src="./script.js"></script>
 </body>
